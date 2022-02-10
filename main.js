@@ -4,6 +4,15 @@ function getData() {
     .then((data) => data.forEach(element => createProduct(element)));
 }
 
+function searchInput(name) {
+  fetch(`http://localhost:3000/search?name=${name}`)
+  .then((response) => response.json())
+  .then((data) => {
+    document.getElementById("products").textContent = "";
+    data.forEach(element => createProduct(element));
+  })
+}
+
 function createProduct(product) {
   let productDiv = document.createElement("div");
   productDiv.classList.add("product", "bg-white", "rounded-xl", "shadow-xl", "p-3", "h-96");
