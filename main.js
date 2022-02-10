@@ -26,8 +26,8 @@ function createProduct(product) {
       <div class="text-center">${product.name}</div>
     </div>
     <div class="flex justify-between px-4 border-t py-2">
-      <div class="w-2/3 text-center py-2">$${product.price}</div>
-      <button class="rounded border px-2">add</button>
+      <div class="w-2/3 text-center py-2">$${product.price || 0}</div>
+      <button class="rounded px-3 flex items-center justify-center bg-gray-600 rounded-full"><i class="fa fa-cart-plus text-white min-w-0"></i></button>
     </div>
   </div>
   `;
