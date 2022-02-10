@@ -139,7 +139,7 @@ function createProduct(product) {
     </div>
     <div class="flex justify-between px-4 border-t py-2">
       <div class="w-2/3 text-center py-2">$${product.price || 0}</div>
-      <button onclick="addProductToCart(${product.id})" class="rounded px-3 flex items-center justify-center bg-gray-600 rounded-full"><i class="fa fa-cart-plus text-white min-w-0"></i></button>
+      <button onclick="addProductToCart(${product.id})" class="rounded px-3 flex items-center justify-center bg-gray-600 rounded-full hover:bg-black hover:text-white"><i class="fa fa-cart-plus text-white min-w-0"></i></button>
     </div>
   </div>
   `;
@@ -169,3 +169,4 @@ window.onclick = function (event) {
 getData();
 getCategories();
 renderCart();
+
