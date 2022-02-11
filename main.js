@@ -1,17 +1,17 @@
 function getData() {
-  fetch("https://8fb3c4dc9990.up.railway.app/products")
+  fetch("https://shop-api-production.up.railway.app/products")
     .then((response) => response.json())
     .then((data) => data.forEach((element) => createProduct(element)));
 }
 
 function getCategories() {
-  fetch("https://8fb3c4dc9990.up.railway.app/categories")
+  fetch("https://shop-api-production.up.railway.app/categories")
     .then((response) => response.json())
     .then((data) => data.forEach((element) => createCategory(element)));
 }
 // add product to local storage and render it
 function addProductToCart(productId) {
-  fetch(`https://8fb3c4dc9990.up.railway.app/products/${productId}`)
+  fetch(`https://shop-api-production.up.railway.app/products/${productId}`)
     .then((response) => response.json())
     .then((data) => {
       let product = {
@@ -101,7 +101,7 @@ function createCategory(category) {
   document.querySelector("#categories").appendChild(categoryDiv);
 }
 function orderByCategories(categoryId) {
-  fetch(`https://8fb3c4dc9990.up.railway.app/order_by_category?category_id=${categoryId}`)
+  fetch(`https://shop-api-production.up.railway.app/order_by_category?category_id=${categoryId}`)
     .then((response) => response.json())
     .then((data) => {
       document.querySelector("#products").innerHTML = "";
@@ -110,7 +110,7 @@ function orderByCategories(categoryId) {
 }
 
 function searchInput(name) {
-  fetch(`https://8fb3c4dc9990.up.railway.app/search?name=${name}`)
+  fetch(`https://shop-api-production.up.railway.app/search?name=${name}`)
     .then((response) => response.json())
     .then((data) => {
       document.getElementById("products").textContent = "";
