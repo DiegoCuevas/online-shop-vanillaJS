@@ -132,8 +132,8 @@ function createProduct(product) {
   productDiv.innerHTML = `
   <div class="flex flex-col justify-between h-full">
     <div class="">
-      <div class="flex h-64 items-center">
-        <img src="${product.url_image}" alt="${product.name}">
+      <div class="flex h-64 items-center justify-center">
+        <img class="h-full" src="${product.url_image}" alt="${product.name}">
       </div>
       <div class="text-center">${product.name}</div>
     </div>
@@ -168,3 +168,4 @@ window.onclick = function (event) {
 
 getData();
 getCategories();
+renderCart();
